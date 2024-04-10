@@ -18,6 +18,11 @@ while not ai.win(grid, 'X') and not ai.win(grid, 'O'):
         else:
             print('AlREADY TAKEN!!!!')
             print('You lost your turn')
+    
+    if ai.win(grid, 'X'):
+        os.system('cls')
+        game.print_grid(grid)
+        break
 
     ai_move = ai.minmax(grid, ai.AI)
     grid[ai_move[0]] = 'O'
